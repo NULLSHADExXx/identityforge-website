@@ -28,7 +28,7 @@ export default function DataScrubPro() {
             </a>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" className="font-mono border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/DataScrubPro.dmg", "_blank")}>
+            <Button variant="outline" className="font-mono border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white" onClick={() => window.open("/downloads/DataScrubPro.dmg", "_blank")}>
               <Download className="w-4 h-4 mr-2" />
               MAC
             </Button>
@@ -63,9 +63,13 @@ export default function DataScrubPro() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto font-mono text-lg h-14 px-8 bg-cyan-500 text-white hover:bg-cyan-600" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/DataScrubPro.dmg", "_blank")}>
+              <Button size="lg" className="w-full sm:w-auto font-mono text-lg h-14 px-8 bg-cyan-500 text-white hover:bg-cyan-600" onClick={() => window.open("/downloads/DataScrubPro.dmg", "_blank")}>
                 <Download className="w-5 h-5 mr-2" />
                 DOWNLOAD FOR MAC
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto font-mono text-lg h-14 px-8 border-muted-foreground/30 opacity-50 cursor-not-allowed" disabled>
+                <Download className="w-5 h-5 mr-2" />
+                WINDOWS (COMING SOON)
               </Button>
             </div>
             

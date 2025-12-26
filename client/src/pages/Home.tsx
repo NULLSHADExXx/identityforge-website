@@ -212,7 +212,7 @@ export default function Home() {
                   <Button 
                     variant="outline"
                     className="font-mono border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white"
-                    onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/DataScrubPro.dmg", "_blank")}
+                    onClick={() => window.open("/downloads/DataScrubPro.dmg", "_blank")}
                   >
                     <Download className="w-4 h-4 mr-2" />
                     MAC
