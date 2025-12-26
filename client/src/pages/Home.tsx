@@ -24,7 +24,7 @@ export default function Home() {
             <a href="#donate" className="hover:text-primary transition-colors">DONATE</a>
             <a href="#contact" className="hover:text-primary transition-colors">CONTACT</a>
           </div>
-          <Button variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/download/v3.0/IdentityForge.dmg", "_blank")}>
             <Download className="w-4 h-4 mr-2" />
             DOWNLOAD v3.0
           </Button>
@@ -59,11 +59,11 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto font-mono text-lg h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button size="lg" className="w-full sm:w-auto font-mono text-lg h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/download/v3.0/IdentityForge.dmg", "_blank")}>
                 <Download className="w-5 h-5 mr-2" />
                 DOWNLOAD NOW
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto font-mono text-lg h-14 px-8 border-muted-foreground/30 hover:bg-muted/20">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto font-mono text-lg h-14 px-8 border-muted-foreground/30 hover:bg-muted/20" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website", "_blank")}>
                 <Terminal className="w-5 h-5 mr-2" />
                 VIEW SOURCE
               </Button>
