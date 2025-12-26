@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Fingerprint, Layers, Zap, Globe, Lock, Terminal, Download, Send } from "lucide-react";
-import { Link } from "wouter";
+import { Shield, Fingerprint, Layers, Zap, Globe, Lock, Terminal, Download, Send, Bitcoin, Copy, Heart } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function Home() {
+  const copyToClipboard = (text: string, label: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success(`${label} address copied to clipboard`);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
@@ -15,12 +21,12 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-8 font-mono text-sm">
             <a href="#features" className="hover:text-primary transition-colors">FEATURES</a>
-            <a href="#pricing" className="hover:text-primary transition-colors">PRICING</a>
+            <a href="#donate" className="hover:text-primary transition-colors">DONATE</a>
             <a href="#contact" className="hover:text-primary transition-colors">CONTACT</a>
           </div>
           <Button variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground">
             <Download className="w-4 h-4 mr-2" />
-            GET v3.0
+            DOWNLOAD v3.0
           </Button>
         </div>
       </nav>
@@ -39,7 +45,7 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              SYSTEM ONLINE // v3.0 RELEASED
+              SYSTEM ONLINE // FREE RELEASE
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-6 leading-tight">
@@ -48,18 +54,18 @@ export default function Home() {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              The ultimate anti-detect browser manager for multi-account operations. 
-              Isolate fingerprints, manage proxies, and scale your digital presence without detection.
+              The ultimate anti-detect browser manager. Now 100% free and open for the community. 
+              Isolate fingerprints, manage proxies, and scale your operations without limits.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="w-full sm:w-auto font-mono text-lg h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90">
                 <Download className="w-5 h-5 mr-2" />
-                DOWNLOAD FOR MACOS
+                DOWNLOAD NOW
               </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto font-mono text-lg h-14 px-8 border-muted-foreground/30 hover:bg-muted/20">
                 <Terminal className="w-5 h-5 mr-2" />
-                VIEW DOCUMENTATION
+                VIEW SOURCE
               </Button>
             </div>
           </div>
@@ -156,42 +162,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing / CTA */}
-      <section id="pricing" className="py-20 bg-card/30 border-y border-border/50">
+      {/* Donation Section */}
+      <section id="donate" className="py-20 bg-card/30 border-y border-border/50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-mono mb-12">SECURE YOUR LICENSE</h2>
+          <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
+            <Heart className="w-8 h-8 text-primary animate-pulse" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold font-mono mb-6">SUPPORT DEVELOPMENT</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
+            IdentityForge is free for everyone. If this tool helps you succeed, consider supporting future updates and maintenance.
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-card border-border hover:border-primary/50 transition-colors relative overflow-hidden">
+            {/* Bitcoin */}
+            <Card className="bg-card border-border hover:border-[#F7931A]/50 transition-colors relative overflow-hidden group">
               <CardHeader>
-                <CardTitle className="text-2xl font-mono">MONTHLY ACCESS</CardTitle>
-                <div className="text-4xl font-bold mt-4">$15<span className="text-lg text-muted-foreground font-normal">/mo</span></div>
+                <div className="flex items-center justify-center mb-4">
+                  <div className="p-3 bg-[#F7931A]/10 rounded-full">
+                    <Bitcoin className="w-8 h-8 text-[#F7931A]" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-mono">BITCOIN (BTC)</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-4 text-left mb-8 font-mono text-sm">
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Full Feature Access</li>
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Unlimited Profiles</li>
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Priority Support</li>
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Cancel Anytime</li>
-                </ul>
-                <Button className="w-full font-mono" variant="outline">SUBSCRIBE NOW</Button>
+                <div className="bg-background p-4 rounded border border-border font-mono text-xs md:text-sm break-all mb-4 text-muted-foreground group-hover:text-foreground transition-colors">
+                  bc1qe5jp06tfxuqpgaxazlsngkk54zkm4jzaxc6hk0
+                </div>
+                <Button 
+                  className="w-full font-mono hover:bg-[#F7931A] hover:text-white transition-colors" 
+                  variant="outline"
+                  onClick={() => copyToClipboard("bc1qe5jp06tfxuqpgaxazlsngkk54zkm4jzaxc6hk0", "Bitcoin")}
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  COPY ADDRESS
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-card border-primary/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 font-mono">BEST VALUE</div>
+            {/* USDT */}
+            <Card className="bg-card border-border hover:border-[#26A17B]/50 transition-colors relative overflow-hidden group">
               <CardHeader>
-                <CardTitle className="text-2xl font-mono text-primary">LIFETIME ACCESS</CardTitle>
-                <div className="text-4xl font-bold mt-4">$50<span className="text-lg text-muted-foreground font-normal">/once</span></div>
+                <div className="flex items-center justify-center mb-4">
+                  <div className="p-3 bg-[#26A17B]/10 rounded-full">
+                    <div className="w-8 h-8 text-[#26A17B] font-bold flex items-center justify-center border-2 border-[#26A17B] rounded-full">T</div>
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-mono">USDT (TRC20)</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-4 text-left mb-8 font-mono text-sm">
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Full Feature Access</li>
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Unlimited Profiles</li>
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> Lifetime Updates</li>
-                  <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-primary" /> No Recurring Fees</li>
-                </ul>
-                <Button className="w-full font-mono bg-primary text-primary-foreground hover:bg-primary/90">BUY LIFETIME</Button>
+                <div className="bg-background p-4 rounded border border-border font-mono text-xs md:text-sm break-all mb-4 text-muted-foreground group-hover:text-foreground transition-colors">
+                  TMVpdC7JJUDYiE7jYMKMTiMHzMYWBuxcct
+                </div>
+                <Button 
+                  className="w-full font-mono hover:bg-[#26A17B] hover:text-white transition-colors" 
+                  variant="outline"
+                  onClick={() => copyToClipboard("TMVpdC7JJUDYiE7jYMKMTiMHzMYWBuxcct", "USDT")}
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  COPY ADDRESS
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -202,9 +231,9 @@ export default function Home() {
       <section id="contact" className="py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto bg-card border border-border p-8 rounded-lg">
-            <h2 className="text-2xl font-bold font-mono mb-4">READY TO DEPLOY?</h2>
+            <h2 className="text-2xl font-bold font-mono mb-4">JOIN THE COMMUNITY</h2>
             <p className="text-muted-foreground mb-8">
-              Contact the developer directly for purchase inquiries, support, or custom feature requests.
+              Connect with the developer and other users. Report bugs, suggest features, or just say thanks.
             </p>
             <a 
               href="https://t.me/NULLSHADExXx" 
@@ -222,7 +251,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 border-t border-border/30 text-center text-sm text-muted-foreground font-mono">
         <div className="container mx-auto px-4">
-          <p>&copy; 2025 IdentityForge. All systems operational.</p>
+          <p>&copy; 2025 IdentityForge. Open Source & Free.</p>
           <p className="mt-2 text-xs opacity-50">Designed for educational and research purposes only.</p>
         </div>
       </footer>
