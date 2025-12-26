@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Fingerprint, Layers, Zap, Globe, Lock, Terminal, Download, Send, Bitcoin, Copy, Heart } from "lucide-react";
+import { Shield, Fingerprint, Layers, Zap, Globe, Lock, Terminal, Download, Send, Bitcoin, Copy, Heart, Database, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -21,6 +21,7 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-8 font-mono text-sm">
             <a href="#features" className="hover:text-primary transition-colors">FEATURES</a>
+            <a href="#tools" className="hover:text-primary transition-colors">TOOLS</a>
             <a href="#donate" className="hover:text-primary transition-colors">DONATE</a>
             <a href="#contact" className="hover:text-primary transition-colors">CONTACT</a>
           </div>
@@ -168,15 +169,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Other Tools Section */}
+      <section id="tools" className="py-20 bg-card/30 border-y border-border/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-mono mb-4">MORE TOOLS</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Check out our other free utilities designed for power users.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <Card className="bg-card border-border hover:border-cyan-500/50 transition-all duration-300 group">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-cyan-500/10 rounded-lg border border-cyan-500/20">
+                    <Database className="w-10 h-10 text-cyan-500" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="font-mono text-2xl mb-2">DataScrub Pro</CardTitle>
+                    <p className="text-muted-foreground text-sm">
+                      High-performance data extraction tool. Process 50GB+ files, extract credentials by target, and export organized results.
+                    </p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">50GB+ FILES</span>
+                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">MULTI-THREADED</span>
+                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">100% OFFLINE</span>
+                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">RUST POWERED</span>
+                </div>
+                <div className="flex gap-4">
+                  <Button 
+                    className="flex-1 font-mono bg-cyan-500 hover:bg-cyan-600 text-white"
+                    onClick={() => window.location.href = "/datascrub-pro"}
+                  >
+                    LEARN MORE
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    className="font-mono border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white"
+                    onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/DataScrubPro.dmg", "_blank")}
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    MAC
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Donation Section */}
-      <section id="donate" className="py-20 bg-card/30 border-y border-border/50">
+      <section id="donate" className="py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
             <Heart className="w-8 h-8 text-primary animate-pulse" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold font-mono mb-6">SUPPORT DEVELOPMENT</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-            IdentityForge is free for everyone. If this tool helps you succeed, consider supporting future updates and maintenance.
+            All tools are free for everyone. If they help you succeed, consider supporting future updates and maintenance.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -234,7 +290,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-card/30 border-t border-border/50">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto bg-card border border-border p-8 rounded-lg">
             <h2 className="text-2xl font-bold font-mono mb-4">JOIN THE COMMUNITY</h2>
@@ -257,7 +313,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 border-t border-border/30 text-center text-sm text-muted-foreground font-mono">
         <div className="container mx-auto px-4">
-          <p>&copy; 2025 IdentityForge. Open Source & Free.</p>
+          <p>&copy; 2025 NULLSHADExXx Tools. Open Source & Free.</p>
           <p className="mt-2 text-xs opacity-50">Designed for educational and research purposes only.</p>
         </div>
       </footer>
