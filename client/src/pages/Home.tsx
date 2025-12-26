@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Fingerprint, Layers, Zap, Globe, Lock, Terminal, Download, Send, Bitcoin, Copy, Heart, Database, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { Shield, Fingerprint, Layers, Zap, Globe, Lock, Terminal, Download, Send, Bitcoin, Copy, Heart, Database, Github, FileText, Filter, FolderOpen } from "lucide-react";
 import { toast } from "sonner";
 
 export default function Home() {
@@ -17,29 +16,19 @@ export default function Home() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Shield className="w-8 h-8 text-primary animate-pulse" />
-            <span className="text-xl font-bold font-mono tracking-tighter">IDENTITY<span className="text-primary">FORGE</span></span>
+            <span className="text-xl font-bold font-mono tracking-tighter">NULL<span className="text-primary">SHADE</span></span>
           </div>
           <div className="hidden md:flex items-center gap-8 font-mono text-sm">
-            <a href="#features" className="hover:text-primary transition-colors">FEATURES</a>
-            <a href="#tools" className="hover:text-primary transition-colors">TOOLS</a>
+            <a href="#identityforge" className="hover:text-primary transition-colors">IDENTITYFORGE</a>
+            <a href="#datascrub" className="hover:text-primary transition-colors">DATASCRUB PRO</a>
             <a href="#donate" className="hover:text-primary transition-colors">DONATE</a>
             <a href="#contact" className="hover:text-primary transition-colors">CONTACT</a>
-          </div>
-          <div className="flex gap-2">
-            <Button variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_x64_en-US.msi", "_blank")}>
-              <Download className="w-4 h-4 mr-2" />
-              WIN
-            </Button>
-            <Button variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_aarch64.dmg", "_blank")}>
-              <Download className="w-4 h-4 mr-2" />
-              MAC
-            </Button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img src="/images/hero-bg.png" alt="Background" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
@@ -52,187 +41,189 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              SYSTEM ONLINE // FREE RELEASE
+              FREE TOOLS FOR POWER USERS
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold font-mono tracking-tighter mb-6 leading-tight">
-              FORGE YOUR <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">DIGITAL IDENTITY</span>
+              PROFESSIONAL <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">SECURITY TOOLS</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              The ultimate anti-detect browser manager. Now 100% free and open for the community. 
-              Isolate fingerprints, manage proxies, and scale your operations without limits.
+              High-performance utilities built with Rust and Tauri. Privacy-focused, offline-capable, and completely free.
             </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto font-mono text-lg h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_x64_en-US.msi", "_blank")}>
-                <Download className="w-5 h-5 mr-2" />
-                DOWNLOAD FOR WINDOWS
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto font-mono text-lg h-14 px-8 border-muted-foreground/30 hover:bg-muted/20" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_aarch64.dmg", "_blank")}>
-                <Download className="w-5 h-5 mr-2" />
-                DOWNLOAD FOR MAC
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section id="features" className="py-20 bg-card/30 border-y border-border/50">
+      {/* IdentityForge Section */}
+      <section id="identityforge" className="py-20 bg-card/30 border-y border-border/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-mono mb-4">SYSTEM CAPABILITIES</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Engineered for stealth, performance, and scale. IdentityForge provides military-grade browser isolation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard 
-              icon={<Fingerprint className="w-10 h-10 text-primary" />}
-              title="Advanced Fingerprint Spoofing"
-              description="Canvas, WebGL, Audio, Fonts, and Hardware concurrency noise injection. Pass BrowserLeaks and Pixelscan checks effortlessly."
-            />
-            <FeatureCard 
-              icon={<Layers className="w-10 h-10 text-accent" />}
-              title="True Isolation"
-              description="Each profile runs in a completely isolated WebView instance with separate data directories, cookies, and local storage."
-            />
-            <FeatureCard 
-              icon={<Globe className="w-10 h-10 text-primary" />}
-              title="Proxy Management"
-              description="Native support for HTTP, HTTPS, and SOCKS5 proxies with authentication. Assign unique IPs to every profile."
-            />
-            <FeatureCard 
-              icon={<Zap className="w-10 h-10 text-accent" />}
-              title="Bulk Operations"
-              description="Create 100+ profiles in seconds. Mass launch, edit, and delete capabilities for high-volume operations."
-            />
-            <FeatureCard 
-              icon={<Lock className="w-10 h-10 text-primary" />}
-              title="Cookie Management"
-              description="Import and export cookies in JSON/Netscape format. Maintain session persistence across restarts."
-            />
-            <FeatureCard 
-              icon={<Terminal className="w-10 h-10 text-accent" />}
-              title="No HWID Lock"
-              description="Freedom to use on your devices. No intrusive hardware ID tracking or licensing restrictions."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Showcase */}
-      <section className="py-20 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
             <div className="lg:w-1/2">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                 <div className="relative bg-card border border-border rounded-lg p-2">
-                  <img src="/images/feature-isolation.png" alt="App Interface" className="rounded w-full shadow-2xl" />
+                  <img src="/images/feature-isolation.png" alt="IdentityForge Interface" className="rounded w-full shadow-2xl" />
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold font-mono">
-                ENGINEERED FOR <span className="text-primary">SCALE</span>
-              </h2>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-primary/10 p-2 rounded border border-primary/20 h-fit">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold font-mono mb-2">Unmatched Privacy</h3>
-                    <p className="text-muted-foreground">
-                      Stop being tracked. IdentityForge randomizes your digital footprint, making every session appear as a unique, legitimate user.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-accent/10 p-2 rounded border border-accent/20 h-fit">
-                    <Zap className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold font-mono mb-2">Lightning Fast</h3>
-                    <p className="text-muted-foreground">
-                      Built with Rust and Tauri 2.0. Uses a fraction of the RAM compared to Electron-based competitors like GoLogin or Multilogin.
-                    </p>
-                  </div>
-                </div>
+            <div className="lg:w-1/2 space-y-6">
+              <div className="flex items-center gap-3">
+                <Shield className="w-12 h-12 text-primary" />
+                <h2 className="text-4xl md:text-5xl font-bold font-mono">IDENTITY<span className="text-primary">FORGE</span></h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                IdentityForge is an advanced anti-detect browser manager designed for professionals who require complete browser isolation and fingerprint management. Built on Tauri 2.0 with a Rust backend, it delivers exceptional performance while maintaining the smallest possible memory footprint.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Each browser profile operates in a fully isolated environment with unique fingerprints, cookies, and local storage. Native proxy support enables seamless IP rotation across HTTP, HTTPS, and SOCKS5 protocols with authentication.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <Button size="lg" className="font-mono bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_x64_en-US.msi", "_blank")}>
+                  <Download className="w-5 h-5 mr-2" />
+                  WINDOWS
+                </Button>
+                <Button size="lg" variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_aarch64.dmg", "_blank")}>
+                  <Download className="w-5 h-5 mr-2" />
+                  MAC
+                </Button>
+                <Button size="lg" variant="outline" className="font-mono" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-app", "_blank")}>
+                  <Github className="w-5 h-5 mr-2" />
+                  SOURCE CODE
+                </Button>
               </div>
             </div>
+          </div>
+
+          {/* IdentityForge Features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <FeatureCard 
+              icon={<Fingerprint className="w-10 h-10 text-primary" />}
+              title="Fingerprint Spoofing"
+              description="Advanced Canvas, WebGL, Audio, and Font fingerprint randomization. Hardware concurrency noise injection passes all major detection services."
+            />
+            <FeatureCard 
+              icon={<Layers className="w-10 h-10 text-accent" />}
+              title="Complete Isolation"
+              description="Each profile runs in a sandboxed WebView instance with dedicated data directories, ensuring zero cross-contamination between sessions."
+            />
+            <FeatureCard 
+              icon={<Globe className="w-10 h-10 text-primary" />}
+              title="Proxy Integration"
+              description="Native support for HTTP, HTTPS, and SOCKS5 proxies with full authentication. Assign unique IP addresses to every browser profile."
+            />
+            <FeatureCard 
+              icon={<Zap className="w-10 h-10 text-accent" />}
+              title="Bulk Operations"
+              description="Create, launch, and manage hundreds of profiles simultaneously. Mass import/export capabilities for enterprise-scale deployments."
+            />
+            <FeatureCard 
+              icon={<Lock className="w-10 h-10 text-primary" />}
+              title="Cookie Management"
+              description="Import and export cookies in JSON and Netscape formats. Maintain persistent sessions across application restarts."
+            />
+            <FeatureCard 
+              icon={<Terminal className="w-10 h-10 text-accent" />}
+              title="No Restrictions"
+              description="No HWID locks, no subscription fees, no usage limits. Complete freedom to deploy across unlimited devices and configurations."
+            />
           </div>
         </div>
       </section>
 
-      {/* Other Tools Section */}
-      <section id="tools" className="py-20 bg-card/30 border-y border-border/50">
+      {/* DataScrub Pro Section */}
+      <section id="datascrub" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-mono mb-4">MORE TOOLS</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Check out our other free utilities designed for power users.
-            </p>
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12 mb-16">
+            <div className="lg:w-1/2">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div className="relative bg-card border border-border rounded-lg p-8 text-center">
+                  <Database className="w-32 h-32 text-cyan-500 mx-auto mb-4" />
+                  <div className="text-6xl font-bold font-mono text-cyan-500">50GB+</div>
+                  <div className="text-muted-foreground font-mono">FILE PROCESSING</div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 space-y-6">
+              <div className="flex items-center gap-3">
+                <Database className="w-12 h-12 text-cyan-500" />
+                <h2 className="text-4xl md:text-5xl font-bold font-mono">DATA<span className="text-cyan-500">SCRUB</span> PRO</h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                DataScrub Pro is a high-performance data extraction and organization utility engineered for processing massive text datasets. The multi-threaded Rust engine handles files exceeding 50GB while maintaining a responsive interface through intelligent streaming architecture.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Supporting multiple extraction formats including URL:Login:Pass, Email:Pass, User:Pass, and custom regex patterns, DataScrub Pro automatically groups results by target domain or email provider. Export functionality generates individual files per target for seamless workflow integration.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <Button size="lg" className="font-mono bg-cyan-500 text-white hover:bg-cyan-600" onClick={() => window.open("/downloads/DataScrubPro.dmg", "_blank")}>
+                  <Download className="w-5 h-5 mr-2" />
+                  DOWNLOAD FOR MAC
+                </Button>
+                <Button size="lg" variant="outline" className="font-mono opacity-50 cursor-not-allowed" disabled>
+                  <Download className="w-5 h-5 mr-2" />
+                  WINDOWS (COMING SOON)
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground font-mono">
+                macOS 11.0+ • Apple Silicon & Intel • 100% Offline • Closed Source
+              </p>
+            </div>
           </div>
 
-          <div className="max-w-2xl mx-auto">
-            <Card className="bg-card border-border hover:border-cyan-500/50 transition-all duration-300 group">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-cyan-500/10 rounded-lg border border-cyan-500/20">
-                    <Database className="w-10 h-10 text-cyan-500" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="font-mono text-2xl mb-2">DataScrub Pro</CardTitle>
-                    <p className="text-muted-foreground text-sm">
-                      High-performance data extraction tool. Process 50GB+ files, extract credentials by target, and export organized results.
-                    </p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">50GB+ FILES</span>
-                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">MULTI-THREADED</span>
-                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">100% OFFLINE</span>
-                  <span className="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-mono rounded">RUST POWERED</span>
-                </div>
-                <div className="flex gap-4">
-                  <Button 
-                    className="flex-1 font-mono bg-cyan-500 hover:bg-cyan-600 text-white"
-                    onClick={() => window.location.href = "/datascrub-pro"}
-                  >
-                    LEARN MORE
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="font-mono border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white"
-                    onClick={() => window.open("/downloads/DataScrubPro.dmg", "_blank")}
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    MAC
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          {/* DataScrub Features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <FeatureCard 
+              icon={<Zap className="w-10 h-10 text-cyan-500" />}
+              title="Multi-Threaded Engine"
+              description="Configurable thread pool processes millions of lines per minute. Adjust thread count and chunk size for optimal performance on your hardware."
+              color="cyan"
+            />
+            <FeatureCard 
+              icon={<Database className="w-10 h-10 text-blue-500" />}
+              title="Streaming Architecture"
+              description="Memory-efficient design never loads entire files into RAM. Process datasets of any size without system resource constraints."
+              color="cyan"
+            />
+            <FeatureCard 
+              icon={<Filter className="w-10 h-10 text-cyan-500" />}
+              title="Smart Target Filtering"
+              description="Filter results by specific domains like facebook.com or netflix.com. Intelligent grouping by URL target or email domain based on extraction mode."
+              color="cyan"
+            />
+            <FeatureCard 
+              icon={<FileText className="w-10 h-10 text-blue-500" />}
+              title="Organized Export"
+              description="Generate individual output files per target domain. Export facebook.txt, gmail.txt, and netflix.txt in a single operation."
+              color="cyan"
+            />
+            <FeatureCard 
+              icon={<FolderOpen className="w-10 h-10 text-cyan-500" />}
+              title="Batch Processing"
+              description="Load multiple files simultaneously or process entire directories. Recursive scanning supports .txt, .log, .csv, and .dat formats."
+              color="cyan"
+            />
+            <FeatureCard 
+              icon={<Lock className="w-10 h-10 text-blue-500" />}
+              title="Complete Privacy"
+              description="100% offline operation ensures data never leaves your machine. No telemetry, no cloud connectivity, no external dependencies."
+              color="cyan"
+            />
           </div>
         </div>
       </section>
 
       {/* Donation Section */}
-      <section id="donate" className="py-20">
+      <section id="donate" className="py-20 bg-card/30 border-y border-border/50">
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
             <Heart className="w-8 h-8 text-primary animate-pulse" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold font-mono mb-6">SUPPORT DEVELOPMENT</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-            All tools are free for everyone. If they help you succeed, consider supporting future updates and maintenance.
+            All tools are provided free of charge. If these utilities contribute to your success, consider supporting ongoing development and maintenance.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -290,12 +281,12 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 bg-card/30 border-t border-border/50">
+      <section id="contact" className="py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto bg-card border border-border p-8 rounded-lg">
-            <h2 className="text-2xl font-bold font-mono mb-4">JOIN THE COMMUNITY</h2>
+            <h2 className="text-2xl font-bold font-mono mb-4">GET IN TOUCH</h2>
             <p className="text-muted-foreground mb-8">
-              Connect with the developer and other users. Report bugs, suggest features, or just say thanks.
+              Questions, bug reports, or feature requests? Connect directly via Telegram for the fastest response.
             </p>
             <a 
               href="https://t.me/NULLSHADExXx" 
@@ -313,17 +304,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 border-t border-border/30 text-center text-sm text-muted-foreground font-mono">
         <div className="container mx-auto px-4">
-          <p>&copy; 2025 NULLSHADExXx Tools. Open Source & Free.</p>
-          <p className="mt-2 text-xs opacity-50">Designed for educational and research purposes only.</p>
+          <p>&copy; 2025 NULLSHADExXx. All tools provided as-is for educational purposes.</p>
         </div>
       </footer>
     </div>
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+function FeatureCard({ icon, title, description, color = "primary" }: { icon: React.ReactNode, title: string, description: string, color?: string }) {
+  const borderColor = color === "cyan" ? "hover:border-cyan-500/50" : "hover:border-primary/50";
   return (
-    <Card className="bg-card/50 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+    <Card className={`bg-card/50 border-border ${borderColor} transition-all duration-300 hover:-translate-y-1`}>
       <CardHeader>
         <div className="mb-4">{icon}</div>
         <CardTitle className="font-mono text-lg">{title}</CardTitle>
