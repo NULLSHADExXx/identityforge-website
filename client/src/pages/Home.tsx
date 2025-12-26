@@ -80,13 +80,13 @@ export default function Home() {
                 Each browser profile operates in a fully isolated environment with unique fingerprints, cookies, and local storage. Native proxy support enables seamless IP rotation across HTTP, HTTPS, and SOCKS5 protocols with authentication.
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
-                <Button size="lg" className="font-mono bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_x64_en-US.msi", "_blank")}>
-                  <Download className="w-5 h-5 mr-2" />
-                  WINDOWS
-                </Button>
-                <Button size="lg" variant="outline" className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-website/releases/latest/download/IdentityForge_aarch64.dmg", "_blank")}>
+                <Button size="lg" className="font-mono bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("/downloads/IdentityForge.dmg", "_blank")}>
                   <Download className="w-5 h-5 mr-2" />
                   MAC
+                </Button>
+                <Button size="lg" variant="outline" className="font-mono opacity-50 cursor-not-allowed" disabled>
+                  <Download className="w-5 h-5 mr-2" />
+                  WINDOWS (COMING SOON)
                 </Button>
                 <Button size="lg" variant="outline" className="font-mono" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-app", "_blank")}>
                   <Github className="w-5 h-5 mr-2" />
