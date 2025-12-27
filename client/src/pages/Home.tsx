@@ -84,9 +84,9 @@ export default function Home() {
                   <Download className="w-5 h-5 mr-2" />
                   MAC
                 </Button>
-                <Button size="lg" variant="outline" className="font-mono opacity-50 cursor-not-allowed" disabled>
+                <Button size="lg" variant="outline" className="font-mono" onClick={() => window.open("/downloads/IdentityForge.exe", "_blank")}>
                   <Download className="w-5 h-5 mr-2" />
-                  WINDOWS (COMING SOON)
+                  WINDOWS
                 </Button>
                 <Button size="lg" variant="outline" className="font-mono" onClick={() => window.open("https://github.com/NULLSHADExXx/identityforge-app", "_blank")}>
                   <Github className="w-5 h-5 mr-2" />
@@ -162,9 +162,9 @@ export default function Home() {
                   <Download className="w-5 h-5 mr-2" />
                   DOWNLOAD FOR MAC
                 </Button>
-                <Button size="lg" variant="outline" className="font-mono opacity-50 cursor-not-allowed" disabled>
+                <Button size="lg" variant="outline" className="font-mono" onClick={() => window.open("/downloads/DataScrubPro.exe", "_blank")}>
                   <Download className="w-5 h-5 mr-2" />
-                  WINDOWS (COMING SOON)
+                  DOWNLOAD FOR WINDOWS
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground font-mono">
