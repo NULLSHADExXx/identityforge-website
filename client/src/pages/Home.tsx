@@ -93,13 +93,23 @@ export default function Home() {
                   SOURCE CODE
                 </Button>
               </div>
-              
               {/* macOS Installation Instructions */}
               <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                <p className="text-sm font-mono text-yellow-500 font-bold mb-2">⚠️ macOS INSTALLATION</p>
-                <p className="text-sm text-muted-foreground mb-2">After downloading, drag the app to Applications folder, then open Terminal and run:</p>
-                <code className="block bg-background/50 p-2 rounded text-xs font-mono text-primary">xattr -cr /Applications/IdentityForge.app</code>
-                <p className="text-xs text-muted-foreground mt-2">This removes the quarantine flag so macOS allows the app to run.</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-yellow-500 text-xl">⚠️</span>
+                  <div>
+                    <h4 className="font-mono font-bold text-yellow-500 mb-2">macOS INSTALLATION</h4>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      After downloading, drag the app to Applications folder, then open Terminal and run:
+                    </p>
+                    <code className="block bg-background p-2 rounded text-xs font-mono text-primary">
+                      xattr -cr /Applications/IdentityForge.app
+                    </code>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      This removes the quarantine flag so macOS allows the app to run.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -178,13 +188,23 @@ export default function Home() {
               <p className="text-sm text-muted-foreground font-mono">
                 macOS 11.0+ • Apple Silicon & Intel • 100% Offline • Closed Source
               </p>
-              
               {/* macOS Installation Instructions */}
-              <div className="mt-6 p-4 bg-cyan-500/10 border border-cyan-500/30 rounded-lg">
-                <p className="text-sm font-mono text-cyan-500 font-bold mb-2">⚠️ macOS INSTALLATION</p>
-                <p className="text-sm text-muted-foreground mb-2">After downloading, drag the app to Applications folder, then open Terminal and run:</p>
-                <code className="block bg-background/50 p-2 rounded text-xs font-mono text-cyan-400">xattr -cr /Applications/DataScrubPro.app</code>
-                <p className="text-xs text-muted-foreground mt-2">This removes the quarantine flag so macOS allows the app to run.</p>
+              <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <span className="text-yellow-500 text-xl">⚠️</span>
+                  <div>
+                    <h4 className="font-mono font-bold text-yellow-500 mb-2">macOS INSTALLATION</h4>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      After downloading, drag the app to Applications folder, then open Terminal and run:
+                    </p>
+                    <code className="block bg-background p-2 rounded text-xs font-mono text-primary">
+                      xattr -cr /Applications/DataScrubPro.app
+                    </code>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      This removes the quarantine flag so macOS allows the app to run.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
